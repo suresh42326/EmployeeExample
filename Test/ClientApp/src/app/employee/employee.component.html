@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-md-12">
+      <h4>Employees</h4>
+      <div class="table-responsive">
+
+
+
+        <button class="btn-primary btn float-right" (click)="open(modalEmployee)">Add Employee</button>
+        <table id="mytable" class="table table-bordred table-striped">
+
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Name</th>
+              <th>Email Address</th>
+              <th>Phone No</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let employee of employees;">
+              <td>{{employee.employeeId}}</td>
+              <td>{{employee.employeeName}}</td>
+              <td>{{employee.emailAddress}}</td>
+              <td>{{employee.phoneNo}}</td>
+              <td><a><i class="far fa-edit"></i></a></td>
+              <td><a><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <ng-template #modalEmployee let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Employee</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+</div>
